@@ -20,7 +20,7 @@ class ManageCaseContainer(DialogContainer, ManageCaseFuncs):
 
     def save_case(self, key: str, props: Dict[str, str]):
         self.__case_storage.put_case(key, props)
-        self.__dialog.close()
+        self.dialog.close()
 
-    def _create_dialog(self) -> Dialog:
-        return self.__dialog_factory.create_manage_case_dialog(self)
+    def create_dialog(self) -> Dialog:
+        return self.dialog_factory.create_manage_case_dialog(self)

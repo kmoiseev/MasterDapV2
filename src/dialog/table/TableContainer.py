@@ -6,7 +6,6 @@ from src.dialog.DialogFactory import DialogFactory
 from src.dialog.formdoc.FormDocContainer import FormDocContainer
 from src.dialog.managecase.ManageCaseContainer import ManageCaseContainer
 from src.dialog.table.TableFuncs import TableFuncs
-from src.dialog.table.data.TableRow import TableRow
 from src.session.Session import Session
 from src.storage.case.Case import Case
 from src.storage.case.CaseStorage import CaseStorage
@@ -46,5 +45,5 @@ class TableContainer(DialogContainer, TableFuncs):
     def get_table_data(self) -> List[Case]:
         return self.__case_storage.get_all_cases()
 
-    def _create_dialog(self) -> Dialog:
+    def create_dialog(self) -> Dialog:
         return self.__dialog_factory.create_table_dialog(self)

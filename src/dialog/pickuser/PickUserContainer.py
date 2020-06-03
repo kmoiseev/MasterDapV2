@@ -28,11 +28,11 @@ class PickUserContainer(DialogContainer, PickUserFuncs):
 
     def user_selected(self, key):
         self.__session.set_employee_id(key)
-        self.__dialog.close()
+        self.dialog.close()
         self.__table_container.show_dialog()
 
     def closed_on_x(self):
         sys.exit()
 
-    def _create_dialog(self) -> Dialog:
-        return self.__dialog_factory.create_pick_user_dialog(self)
+    def create_dialog(self) -> Dialog:
+        return self.dialog_factory.create_pick_user_dialog(self)

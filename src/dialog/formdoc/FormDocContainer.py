@@ -13,5 +13,5 @@ class FormDocContainer(DialogContainer, FormDocFuncs):
         # todo
         pass
 
-    def _create_dialog(self) -> Dialog:
-        return self.__dialog_factory.create_form_doc_dialog(self)
+    def create_dialog(self) -> Dialog:
+        return self.dialog_factory.create_form_doc_dialog(self)

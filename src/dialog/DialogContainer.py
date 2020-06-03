@@ -7,13 +7,13 @@ from src.dialog.DialogFactory import DialogFactory
 class DialogContainer:
 
     def __init__(self, dialog_factory: DialogFactory):
-        self.__dialog_factory = dialog_factory
-        self.__dialog = None
+        self.dialog_factory = dialog_factory
+        self.dialog = None
 
     @abstractmethod
-    def _create_dialog(self) -> Dialog:
+    def create_dialog(self) -> Dialog:
         pass
 
     def show_dialog(self):
-        self.__dialog = self._create_dialog()
-        self.__dialog.draw()
+        self.dialog = self.create_dialog()
+        self.dialog.draw()

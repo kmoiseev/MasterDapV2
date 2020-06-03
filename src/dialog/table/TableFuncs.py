@@ -1,7 +1,6 @@
 from abc import abstractmethod
 from typing import List
 
-from src.dialog.table.data.TableRow import TableRow
 from src.storage.case.Case import Case
 
 
