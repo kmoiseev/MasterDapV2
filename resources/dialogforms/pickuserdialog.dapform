@@ -1,7 +1,0 @@
-size=400x220
-
-#template_start#
-<label text="Выберите пользователя:"/>
-<input type="employee" key="employee_name"/>
-<button text="Далее" key="employee_selected"/>
-#template_end#

@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import List
 
-from src.storage.case.Case import Case
+from src.storage.entity.Entity import Entity
 
 
 class TableFuncs:
@@ -22,5 +22,5 @@ class TableFuncs:
         pass
 
     @abstractmethod
-    def get_table_data(self) -> List[Case]:
+    def get_table_data(self) -> List[Entity]:
         pass

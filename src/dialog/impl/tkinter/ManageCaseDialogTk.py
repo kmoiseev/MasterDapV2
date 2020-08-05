@@ -1,4 +1,4 @@
-from src.dialog.managecase.ManageCaseDialog import ManageCaseDialog
+from src.dialog.manageentity.ManageCaseDialog import ManageCaseDialog
 
 
 class ManageCaseDialogTk(ManageCaseDialog):
