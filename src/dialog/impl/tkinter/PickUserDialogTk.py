@@ -1,4 +1,4 @@
-from src.dialog.pickuser.PickUserDialog import PickUserDialog
+from src.dialog.common.pickuser.PickUserDialog import PickUserDialog
 
 
 class PickUserDialogTk(PickUserDialog):

@@ -1,4 +1,4 @@
-from src.dialog.table.TableDialog import TableDialog
+from src.dialog.common.table.TableDialog import TableDialog
 
 
 class TableDialogTk(TableDialog):

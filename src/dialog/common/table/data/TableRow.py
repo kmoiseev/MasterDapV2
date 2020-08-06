@@ -1,6 +1,6 @@
 from typing import List
 
-from src.dialog.table.data.TableCell import TableCell
+from src.dialog.common.table.data.TableCell import TableCell
 
 
 class TableRow:

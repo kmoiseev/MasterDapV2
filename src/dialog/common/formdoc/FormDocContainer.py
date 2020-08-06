@@ -1,7 +1,7 @@
-from src.dialog.Dialog import Dialog
-from src.dialog.DialogContainer import DialogContainer
-from src.dialog.DialogFactory import DialogFactory
-from src.dialog.formdoc.FormDocFuncs import FormDocFuncs
+from src.dialog.common.Dialog import Dialog
+from src.dialog.common.DialogContainer import DialogContainer
+from src.dialog.common.DialogFactory import DialogFactory
+from src.dialog.common.formdoc import FormDocFuncs
 
 
 class FormDocContainer(DialogContainer, FormDocFuncs):

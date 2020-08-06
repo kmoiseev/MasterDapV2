@@ -1,11 +1,11 @@
 from typing import List
 
-from src.dialog.Dialog import Dialog
-from src.dialog.DialogContainer import DialogContainer
-from src.dialog.DialogFactory import DialogFactory
-from src.dialog.formdoc.FormDocContainer import FormDocContainer
-from src.dialog.manageentity.ManageCaseContainer import ManageEntityContainer
-from src.dialog.table.TableFuncs import TableFuncs
+from src.dialog.common.Dialog import Dialog
+from src.dialog.common.DialogContainer import DialogContainer
+from src.dialog.common.DialogFactory import DialogFactory
+from src.dialog.common.formdoc import FormDocContainer
+from src.dialog.common.manageentity import ManageEntityContainer
+from src.dialog.common.table.TableFuncs import TableFuncs
 from src.session.Session import Session
 from src.storage.entity.Entity import Entity
 from src.storage.entity.EntityStorage import EntityStorage

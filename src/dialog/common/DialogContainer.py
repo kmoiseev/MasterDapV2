@@ -1,7 +1,7 @@
 from abc import abstractmethod
 
-from src.dialog.Dialog import Dialog
-from src.dialog.DialogFactory import DialogFactory
+from src.dialog.common.Dialog import Dialog
+from src.dialog.common.DialogFactory import DialogFactory
 
 
 class DialogContainer:

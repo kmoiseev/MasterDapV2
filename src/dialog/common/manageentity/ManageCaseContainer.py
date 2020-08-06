@@ -1,9 +1,9 @@
 from typing import Dict
 
-from src.dialog.Dialog import Dialog
-from src.dialog.DialogContainer import DialogContainer
-from src.dialog.DialogFactory import DialogFactory
-from src.dialog.manageentity.ManageEntityFuncs import ManageEntityFuncs
+from src.dialog.common.Dialog import Dialog
+from src.dialog.common.DialogContainer import DialogContainer
+from src.dialog.common.DialogFactory import DialogFactory
+from src.dialog.common.manageentity import ManageEntityFuncs
 from src.session.Session import Session
 from src.storage.entity.EntityStorage import EntityStorage
 

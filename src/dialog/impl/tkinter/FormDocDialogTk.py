@@ -1,4 +1,4 @@
-from src.dialog.formdoc.FormDocDialog import FormDocDialog
+from src.dialog.common.formdoc import FormDocDialog
 
 
 class FormDocDialogTk(FormDocDialog):

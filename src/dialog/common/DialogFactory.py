@@ -1,13 +1,13 @@
 from abc import abstractmethod
 
-from src.dialog.formdoc.FormDocDialog import FormDocDialog
-from src.dialog.formdoc.FormDocFuncs import FormDocFuncs
-from src.dialog.manageentity.ManageCaseDialog import ManageCaseDialog
-from src.dialog.manageentity.ManageEntityFuncs import ManageEntityFuncs
-from src.dialog.pickuser.PickUserDialog import PickUserDialog
-from src.dialog.pickuser.PickUserFuncs import PickUserFuncs
-from src.dialog.table.TableDialog import TableDialog
-from src.dialog.table.TableFuncs import TableFuncs
+from src.dialog.common.formdoc import FormDocDialog
+from src.dialog.common.formdoc import FormDocFuncs
+from src.dialog.common.manageentity import ManageCaseDialog
+from src.dialog.common.manageentity import ManageEntityFuncs
+from src.dialog.common.pickuser.PickUserDialog import PickUserDialog
+from src.dialog.common.pickuser.PickUserFuncs import PickUserFuncs
+from src.dialog.common.table.TableDialog import TableDialog
+from src.dialog.common.table.TableFuncs import TableFuncs
 
 
 class DialogFactory:
