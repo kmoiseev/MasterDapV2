@@ -1,0 +1,19 @@
+{
+  "docs": [
+    {
+      "name": "Решение о передаче...",
+      "properties" : [
+        {
+          "id": "date_per",
+          "type": "DATE"
+        },
+        {
+          "id": "face_per",
+          "type": "DROPDOWN",
+          "dropdown_type": "SOMETHING"
+        }
+      ]
+    },
+    {}
+  ]
+}

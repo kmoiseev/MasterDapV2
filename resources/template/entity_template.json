@@ -1,0 +1,30 @@
+{
+  "properties" : [
+    {
+      "id": "case_code_art",
+      "type": "DROPDOWN",
+      "dropdown_values" : [
+        "12.1",
+        "14.1",
+        "551"
+      ]
+    },
+    {
+      "id": "case_date_init",
+      "type": "DATE"
+    },
+    {
+      "id": "case_comp_inn",
+      "type": "STRING"
+    },
+    {
+      "id": "case_repr_pos".
+      "type": "DROPDOWN",
+      "dropdown_values" : [
+        "12.1",
+        "14.1",
+        "551"
+      ]
+    }
+  ]
+}

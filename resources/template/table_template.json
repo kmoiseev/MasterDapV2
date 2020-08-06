@@ -1,0 +1,8 @@
+{
+  "columns": [
+    {
+      "header": "Статья",
+      "value": "$case_code_art $case_code_part"
+    }
+  ]
+}

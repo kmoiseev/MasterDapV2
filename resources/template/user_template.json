@@ -1,0 +1,7 @@
+{
+  "properties": [
+    "user_duty",
+    "user_phone",
+    "user_email"
+  ]
+}
