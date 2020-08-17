@@ -1,8 +1,60 @@
 {
   "columns": [
     {
-      "header": "Статья",
+      "header": "",
+      "value": ""
+    },
+    {
+      "header": "",
+      "value": ""
+    },
+    {
+      "header": "",
+      "value": ""
+    },
+    {
+      "header": "№ дела об АП",
+      "value": "10418000-%case_number/%case_init_%year"
+    },
+    {
+      "header": "КоАП РФ",
       "value": "$case_code_art $case_code_part"
+    },
+    {
+      "header": "дата возбуждения",
+      "value": "case_date_init"
+    },
+    {
+      "header": "юридическое лицо",
+      "value": "case_company"
+    },
+    {
+      "header": "юридический адрес",
+      "value": "case_index, case_state, case_city, case_street"
+    },
+    {
+      "header": "ИНН",
+      "value": "case_inn"
+    },
+    {
+      "header": "КПП",
+      "value": "case_kpp"
+    },
+    {
+      "header": "ОГРН",
+      "value": "case_ogrn"
+    },
+    {
+      "header": "законный представитель",
+      "value": "case_repr"
+    },
+    {
+      "header": "эл.почта",
+      "value": "case_email"
+    },
+    {
+      "header": "№ ДТ",
+      "value": "case_dt"
     }
   ]
 }

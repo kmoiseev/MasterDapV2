@@ -1,7 +1,7 @@
 {
   "docs": [
     {
-      "name": "Решение о передаче...",
+      "name": "Решение о передаче дела об АП",
       "properties" : [
         {
           "id": "date_per",
@@ -14,6 +14,32 @@
         }
       ]
     },
-    {}
+    {
+      "name": "Определение о принятии дела к своему производству",
+      "properties" : [
+        {
+          "id": "date_per",
+          "type": "DATE"
+        },
+        {
+          "id": "face_per",
+          "type": "DROPDOWN",
+          "dropdown_type": "SOMETHING"
+        }
+      ]
+    },
+    {
+      "name": "Определение об истребовании документов и сведений",
+      "properties": [
+        {
+          "id": "date_istreb",
+          "type": "DATE"
+        },
+        {
+          "id": "date_opros",
+          "type": "DATE"
+        }
+      ]
+    }
   ]
 }
