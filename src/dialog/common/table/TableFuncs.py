@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import List
 
-from src.storage.entity.Entity import Entity
+from src.storage.common.entity.Entity import Entity
 
 
 class TableFuncs:

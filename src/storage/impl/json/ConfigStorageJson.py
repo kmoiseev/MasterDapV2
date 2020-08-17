@@ -1,5 +1,5 @@
-from src.storage.config.ConfigStorage import ConfigStorage
-from src.storage.json.JsonUtil import read_json
+from src.storage.common.config.ConfigStorage import ConfigStorage
+from src.storage.impl.json.JsonUtil import read_json
 
 
 class ConfigStorageJson(ConfigStorage):

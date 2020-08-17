@@ -6,44 +6,44 @@ from src.dialog.common.DialogFactory import DialogFactory
 from src.dialog.common.formdoc import FormDocContainer
 from src.dialog.common.manageentity import ManageEntityContainer
 from src.dialog.common.table.TableFuncs import TableFuncs
-from src.session.Session import Session
-from src.storage.entity.Entity import Entity
-from src.storage.entity.EntityStorage import EntityStorage
+from src.session.common.Session import Session
+from src.storage.common.entity.Entity import Entity
+from src.storage.common.entity import EntityStorage
 
 
 class TableContainer(DialogContainer, TableFuncs):
 
     def __init__(
             self,
-            manage_case_container: ManageEntityContainer,
+            manage_entity_container: ManageEntityContainer,
             form_doc_container: FormDocContainer,
             session: Session,
-            case_storage: EntityStorage,
+            entity_storage: EntityStorage,
             dialog_factory: DialogFactory
     ):
         super().__init__(dialog_factory)
-        self.__manage_case_container = manage_case_container
+        self.__manage_case_container = manage_entity_container
         self.__form_doc_container = form_doc_container
         self.__session = session
-        self.__case_storage = case_storage
+        self.__entity_storage = entity_storage
 
     def form_doc(self, key: str):
-        self.__session.set_case_id(key)
+        self.__session.set_form_doc_entity_id(key)
         self.__form_doc_container.show_dialog()
 
     def create_deal(self):
-        self.__session.set_case_id("")
+        self.__session.set_edit_doc_id("")
         self.__manage_case_container.show_dialog()
 
     def edit_deal(self, key: str):
-        self.__session.set_case_id(key)
+        self.__session.set_edit_doc_id(key)
         self.__manage_case_container.show_dialog()
 
     def delete_deal(self, key):
-        self.__case_storage.remove_entity(key)
+        self.__entity_storage.remove_entity(key)
 
     def get_table_data(self) -> List[Entity]:
-        return self.__case_storage.get_all_entities()
+        return self.__entity_storage.get_all_entities()
 
     def create_dialog(self) -> Dialog:
-        return self.__dialog_factory.create_table_dialog(self)
+        return super().dialog_factory.create_table_dialog(self)
