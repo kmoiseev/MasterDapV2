@@ -2,7 +2,7 @@ from abc import abstractmethod
 
 from src.dialog.common.formdoc import FormDocDialog
 from src.dialog.common.formdoc import FormDocFuncs
-from src.dialog.common.manageentity import ManageCaseDialog
+from src.dialog.common.manageentity import ManageEntityDialog
 from src.dialog.common.manageentity import ManageEntityFuncs
 from src.dialog.common.pickuser.PickUserDialog import PickUserDialog
 from src.dialog.common.pickuser.PickUserFuncs import PickUserFuncs
@@ -21,7 +21,7 @@ class DialogFactory:
         pass
 
     @abstractmethod
-    def create_manage_case_dialog(self, manage_case_funcs: ManageEntityFuncs) -> ManageCaseDialog:
+    def create_manage_case_dialog(self, manage_case_funcs: ManageEntityFuncs) -> ManageEntityDialog:
         pass
 
     @abstractmethod

@@ -1,8 +1,8 @@
 from typing import List, Dict
 
-from src.storage.entity.Entity import Entity
-from src.storage.entity.EntityStorage import EntityStorage
-from src.storage.json.JsonUtil import read_json, write_json
+from src.storage.common.entity.Entity import Entity
+from src.storage.common.entity.EntityStorage import EntityStorage
+from src.storage.impl.json.JsonUtil import read_json, write_json
 
 
 class EntityStorageJson(EntityStorage):

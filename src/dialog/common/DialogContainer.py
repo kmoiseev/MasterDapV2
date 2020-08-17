@@ -16,4 +16,4 @@ class DialogContainer:
 
     def show_dialog(self):
         self.dialog = self.create_dialog()
-        self.dialog.draw()
+        self.dialog.show()
