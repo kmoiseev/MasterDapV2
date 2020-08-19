@@ -2,7 +2,8 @@ from typing import List, Dict
 
 from src.storage.common.entity.Entity import Entity
 from src.storage.common.entity.EntityStorage import EntityStorage
-from src.storage.impl.json.JsonUtil import read_json, write_json
+from src.util.json.JsonReader import JsonReader
+from src.util.json.JsonWriter import JsonWriter
 
 
 class EntityStorageJson(EntityStorage):
@@ -13,16 +14,16 @@ class EntityStorageJson(EntityStorage):
     def get_all_entities(self) -> List[Entity]:
         pass
 
-    def put_entity(self, key: str, props: Dict[str, str]):
-        cases_json = read_json(self.__file_path)
-        cases_json[key] = props
-        write_json(self.__file_path, cases_json)
+    def put_entity(self, entity: Entity):
+        entities_json = JsonReader(self.__file_path).read()
+        entities_json[entity.key] = entity.props
+        JsonWriter(self.__file_path, entities_json).write()
 
     def get_entity(self, key) -> Entity:
-        cases_json = read_json(self.__file_path)
-        return Entity(key, cases_json[key])
+        entities_json = JsonReader(self.__file_path).read()
+        return Entity(key, entities_json[key])
 
     def remove_entity(self, key):
-        cases_json = read_json(self.__file_path)
-        del cases_json[key]
-        write_json(self.__file_path, cases_json)
+        entities_json = JsonReader(self.__file_path).read()
+        del entities_json[key]
+        JsonWriter(self.__file_path, entities_json).write()

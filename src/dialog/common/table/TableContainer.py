@@ -1,13 +1,11 @@
-from typing import List
-
 from src.dialog.common.Dialog import Dialog
 from src.dialog.common.DialogContainer import DialogContainer
 from src.dialog.common.DialogFactory import DialogFactory
 from src.dialog.common.formdoc import FormDocContainer
 from src.dialog.common.manageentity import ManageEntityContainer
 from src.dialog.common.table.TableFuncs import TableFuncs
+from src.dialog.common.table.data.Table import Table
 from src.session.common.Session import Session
-from src.storage.common.entity.Entity import Entity
 from src.storage.common.entity import EntityStorage
 
 
@@ -42,8 +40,8 @@ class TableContainer(DialogContainer, TableFuncs):
     def delete_deal(self, key):
         self.__entity_storage.remove_entity(key)
 
-    def get_table_data(self) -> List[Entity]:
+    def get_table_data(self) -> Table:
         return self.__entity_storage.get_all_entities()
 
     def create_dialog(self) -> Dialog:
-        return super().dialog_factory.create_table_dialog(self)
+        return self.dialog_factory.create_table_dialog(self)

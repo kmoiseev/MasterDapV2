@@ -11,7 +11,7 @@ class EntityStorage:
         pass
 
     @abstractmethod
-    def put_entity(self, key: str, props: Dict[str, str]):
+    def put_entity(self, entity: Entity):
         pass
 
     @abstractmethod

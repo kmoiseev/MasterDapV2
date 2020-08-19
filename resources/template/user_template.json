@@ -1,7 +1,20 @@
 {
   "properties": [
-    "user_duty",
-    "user_phone",
-    "user_email"
+    {
+      "id": "user_name",
+      "type": "STRING"
+    },
+    {
+      "id": "user_duty",
+      "type": "STRING"
+    },
+    {
+      "id": "user_phone",
+      "type": "STRING"
+    },
+    {
+      "id": "user_email",
+      "type": "STRING"
+    }
   ]
 }

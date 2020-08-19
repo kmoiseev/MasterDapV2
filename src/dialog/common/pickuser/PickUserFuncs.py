@@ -5,7 +5,7 @@ from typing import List
 class PickUserFuncs:
 
     @abstractmethod
-    def get_user_names(self) -> List[str]:
+    def get_users(self) -> List[str]:
         pass
 
     @abstractmethod

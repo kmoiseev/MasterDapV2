@@ -3,11 +3,7 @@
     {
       "id": "case_code_art",
       "type": "DROPDOWN",
-      "dropdown_values" : [
-        "12.1",
-        "14.1",
-        "551"
-      ]
+      "dropdown_name" : "CASE"
     },
     {
       "id": "case_date_init",
@@ -18,13 +14,9 @@
       "type": "STRING"
     },
     {
-      "id": "case_repr_pos".
+      "id": "case_repr_pos",
       "type": "DROPDOWN",
-      "dropdown_values" : [
-        "12.1",
-        "14.1",
-        "551"
-      ]
+      "dropdown_name" : "CASE"
     }
   ]
 }

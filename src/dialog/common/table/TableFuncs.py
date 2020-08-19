@@ -1,6 +1,7 @@
 from abc import abstractmethod
 from typing import List
 
+from src.dialog.common.table.data.Table import Table
 from src.storage.common.entity.Entity import Entity
 
 
@@ -22,5 +23,5 @@ class TableFuncs:
         pass
 
     @abstractmethod
-    def get_table_data(self) -> List[Entity]:
+    def get_table_data(self) -> Table:
         pass
