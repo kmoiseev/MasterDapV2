@@ -4,6 +4,7 @@ from src.dialog.common.pickuser.PickUserContainer import PickUserContainer
 from src.dialog.common.table.TableContainer import TableContainer
 from src.dialog.impl.tkinter.DialogFactoryTkinter import DialogFactoryTkinter
 from src.session.inmemory.SessionInMemory import SessionInMemory
+from src.storage.common.entity.EntityFactory import EntityFactory
 from src.storage.common.user.UserFactory import UserFactory
 from src.storage.impl.json.EntityStorageJson import EntityStorageJson
 from src.storage.impl.json.UserStorageJson import UserStorageJson
@@ -30,8 +31,9 @@ user_factory = UserFactory(template_manager.user_template)
 # UserStorageJson - хранилище пользователей и информации о них
 user_storage = UserStorageJson(storage_folder + "users.json", user_factory)
 
+entity_factory = EntityFactory(template_manager.entity_template)
 # EntityStorageJson - хранилище сущностей (дел) и информации о них
-entity_storage = EntityStorageJson(storage_folder + "entities.json")
+entity_storage = EntityStorageJson(storage_folder + "entities.json", entity_factory)
 
 dialog_factory = DialogFactoryTkinter()
 

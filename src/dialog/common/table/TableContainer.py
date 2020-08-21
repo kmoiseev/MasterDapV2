@@ -41,6 +41,7 @@ class TableContainer(DialogContainer, TableFuncs):
         self.__entity_storage.remove_entity(key)
 
     def get_table_data(self) -> Table:
+        return Table()
         return self.__entity_storage.get_all_entities()
 
     def create_dialog(self) -> Dialog:

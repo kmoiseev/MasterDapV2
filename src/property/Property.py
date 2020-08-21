@@ -8,6 +8,9 @@ class Property:
         self.template = template
         self.value = value
 
+    def get_id(self):
+        return self.template.id
+
     def set_val(self, val: str):
         self.value = PropertyValue(val)
 
