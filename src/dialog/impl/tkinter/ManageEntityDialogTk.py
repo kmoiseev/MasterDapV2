@@ -1,3 +1,5 @@
+from tkinter import Tk
+
 from src.dialog.common.manageentity.ManageEntityDialog import ManageEntityDialog
 from src.dialog.common.manageentity.ManageEntityFuncs import ManageEntityFuncs
 

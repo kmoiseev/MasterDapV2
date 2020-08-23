@@ -1,8 +1,14 @@
 {
   "1": {
-    "user_name": "Зайцев А.П."
+    "user_name": "Зайцев А.П.",
+    "user_duty": "Уполномоченный по ОВД",
+    "user_phone": "65",
+    "user_email": "ZaytsevAP"
   },
   "2": {
-    "user_name": "Вагин М.А."
+    "user_name": "Вагин М.А.",
+    "user_duty": "Старший уполномоченный",
+    "user_phone": "59",
+    "user_email": "VaginMA"
   }
 }

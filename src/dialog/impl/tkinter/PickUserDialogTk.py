@@ -21,7 +21,7 @@ class PickUserDialogTk(PickUserDialog, ABC):
         self.first_user_name = users[0].props["user_name"].get_val()
 
     def show(self):
-        self.root.title("Tk dropdown example")
+        self.root.title("Pick User")
 
         mainframe = Frame(self.root)
         mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
@@ -31,10 +31,10 @@ class PickUserDialogTk(PickUserDialog, ABC):
 
         tkvar = StringVar(self.root)
 
-
         choices = self.user_keys_by_names
         tkvar.set(self.first_user_name)
         popupMenu = OptionMenu(mainframe, tkvar, *choices)
+
         Label(mainframe, text="Choose a dish").grid(row=1, column=1)
         popupMenu.grid(row=2, column=1)
 

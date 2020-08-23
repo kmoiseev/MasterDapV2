@@ -16,7 +16,7 @@
     {
       "id": "case_repr_pos",
       "type": "DROPDOWN",
-      "dropdown_name" : "CASE"
+      "dropdown_name" : "CASE_PART"
     }
   ]
 }

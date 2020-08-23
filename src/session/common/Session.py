@@ -12,11 +12,11 @@ class Session:
         pass
 
     @abstractmethod
-    def set_edit_doc_id(self, doc_id: str) -> str:
+    def set_edit_entity_id(self, doc_id: str) -> str:
         pass
 
     @abstractmethod
-    def get_edit_doc_id(self) -> str:
+    def get_edit_entity_id(self) -> str:
         pass
 
     @abstractmethod

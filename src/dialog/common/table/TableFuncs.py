@@ -6,6 +6,9 @@ from src.storage.common.entity.Entity import Entity
 
 
 class TableFuncs:
+    def __init__(self):
+        self.closed_on_x = None
+
     @abstractmethod
     def form_doc(self, key: str):
         pass

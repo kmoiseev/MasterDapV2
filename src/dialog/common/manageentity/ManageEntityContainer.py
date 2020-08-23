@@ -16,7 +16,7 @@ class ManageEntityContainer(DialogContainer, ManageEntityFuncs):
         self.__entity_storage = entity_storage
 
     def get_entity_props(self) -> Dict[str, str]:
-        return self.__entity_storage.get_entity(self.__session.get_edit_doc_id()).props
+        return self.__entity_storage.get_entity(self.__session.get_edit_entity_id()).props
 
     def save_entity(self, key: str, props: Dict[str, str]):
         self.__entity_storage.put_entity(key, props)

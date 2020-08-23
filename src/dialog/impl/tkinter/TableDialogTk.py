@@ -13,6 +13,7 @@ class TableDialogTk(TableDialog, ABC):
         self.root = Tk()
         self.root.protocol("WM_DELETE_WINDOW", self.funcs.closed_on_x)
 
+
     def show(self):
         self.funcs.get_table_data()
 
