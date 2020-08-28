@@ -30,11 +30,11 @@ class TableContainer(DialogContainer, TableFuncs):
         self.__form_doc_container.show_dialog()
 
     def create_deal(self):
-        self.__session.set_edit_doc_id("")
+        self.__session.set_edit_entity_id("")
         self.__manage_case_container.show_dialog()
 
     def edit_deal(self, key: str):
-        self.__session.set_edit_doc_id(key)
+        self.__session.set_edit_entity_id(key)
         self.__manage_case_container.show_dialog()
 
     def delete_deal(self, key):

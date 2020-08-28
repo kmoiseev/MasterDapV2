@@ -1,11 +1,13 @@
 from abc import abstractmethod
 from typing import List
 
+from src.storage.common.user.User import User
+
 
 class PickUserFuncs:
 
     @abstractmethod
-    def get_users(self) -> List[str]:
+    def get_users(self) -> List[User]:
         pass
 
     @abstractmethod

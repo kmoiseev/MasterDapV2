@@ -3,7 +3,8 @@ from src.dialog.common.manageentity.ManageEntityContainer import ManageEntityCon
 from src.dialog.common.pickuser.PickUserContainer import PickUserContainer
 from src.dialog.common.table.TableContainer import TableContainer
 from src.dialog.impl.tkinter.DialogFactoryTkinter import DialogFactoryTkinter
-from src.session.inmemory.SessionInMemory import SessionInMemory
+from src.session.common.Session import Session
+from src.session.impl.inmemory.SessionInMemory import SessionInMemory
 from src.storage.common.entity.EntityFactory import EntityFactory
 from src.storage.common.user.UserFactory import UserFactory
 from src.storage.impl.json.EntityStorageJson import EntityStorageJson
@@ -24,7 +25,7 @@ property_type_config = PropertyTypeConfig(property_type_config_folder)
 template_manager = TemplateManager(template_folder, property_type_config)
 
 # SessionInMemory - сессия, которая хранится только внутри оперативной памяти
-session = SessionInMemory()
+session: Session = SessionInMemory()
 
 # UserFactory - создаёт объекты пользователей
 user_factory = UserFactory(template_manager.user_template)
