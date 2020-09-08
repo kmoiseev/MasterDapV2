@@ -3,7 +3,7 @@ from src.dialog.common.manageentity.ManageEntityContainer import ManageEntityCon
 from src.dialog.common.pickuser.PickUserContainer import PickUserContainer
 from src.dialog.common.table.TableContainer import TableContainer
 from src.dialog.common.table.data.TableFactory import TableFactory
-from src.dialog.impl.tkinter.DialogFactoryTkinter import DialogFactoryTkinter
+from src.dialog.impl.tkinter.DialogFactoryImpl import DialogFactoryImpl
 from src.session.common.Session import Session
 from src.session.impl.inmemory.SessionInMemory import SessionInMemory
 from src.storage.common.entity.EntityFactory import EntityFactory
@@ -41,7 +41,7 @@ entity_storage = EntityStorageJson(storage_folder + "entities.json", entity_fact
 table_factory = TableFactory(template_manager.table_template)
 
 # DialogFactoryTkinter - фабрика диалогов на Tkinter библиотеке
-dialog_factory = DialogFactoryTkinter()
+dialog_factory = DialogFactoryImpl()
 
 manage_case_container = ManageEntityContainer(
     session,

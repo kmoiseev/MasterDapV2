@@ -6,7 +6,7 @@ from src.dialog.common.table.TableFuncs import TableFuncs
 from src.dialog.common.table.data.Table import Table
 
 
-class TableDialogTk(TableDialog, ABC):
+class TableDialogPyQt(TableDialog, ABC):
 
     def __init__(self, table_funcs: TableFuncs):
         super().__init__(table_funcs)

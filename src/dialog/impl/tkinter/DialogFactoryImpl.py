@@ -10,16 +10,16 @@ from src.dialog.common.table.TableFuncs import TableFuncs
 from src.dialog.impl.tkinter.FormDocDialogTk import FormDocDialogTk
 from src.dialog.impl.tkinter.ManageEntityDialogTk import ManageEntityDialogTk
 from src.dialog.impl.tkinter.PickUserDialogTk import PickUserDialogTk
-from src.dialog.impl.tkinter.TableDialogTk import TableDialogTk
+from src.dialog.impl.pyqt.TableDialogPyQt import TableDialogPyQt
 
 
-class DialogFactoryTkinter(DialogFactory):
+class DialogFactoryImpl(DialogFactory):
 
     def __init__(self):
         pass
 
     def create_table_dialog(self, table_funcs: TableFuncs) -> TableDialog:
-        return TableDialogTk(table_funcs)
+        return TableDialogPyQt(table_funcs)
 
     def create_pick_user_dialog(self, pick_user_funcs: PickUserFuncs) -> PickUserDialog:
         return PickUserDialogTk(pick_user_funcs)
