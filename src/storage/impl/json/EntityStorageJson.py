@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 
 from src.storage.common.entity import EntityFactory
 from src.storage.common.entity.Entity import Entity
@@ -15,14 +15,14 @@ class EntityStorageJson(EntityStorage):
         self.__file_path = file_path
 
     def get_all_entities(self) -> List[Entity]:
-        entities_json = JsonReader(self.__file_path).read()
+        entities_json: Dict = JsonReader(self.__file_path).read()
         return \
             list(map(
                 lambda entity_key: self.entity_factory.create(
                     entity_key,
                     entities_json[entity_key]
                 ),
-                entities_json.values()
+                entities_json.keys()
             ))
 
     def put_entity(self, entity: Entity):

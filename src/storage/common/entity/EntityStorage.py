@@ -9,8 +9,8 @@ from src.template.entity.EntityTemplate import EntityTemplate
 
 class EntityStorage:
 
-    def __init__(self, entity_template: EntityTemplate):
-        self.entity_factory = EntityFactory(entity_template)
+    def __init__(self, entity_factory: EntityFactory):
+        self.entity_factory = entity_factory
         self.entity_serializer = EntitySerializer()
 
     @abstractmethod

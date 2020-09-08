@@ -2,6 +2,7 @@ from src.dialog.common.formdoc.FormDocContainer import FormDocContainer
 from src.dialog.common.manageentity.ManageEntityContainer import ManageEntityContainer
 from src.dialog.common.pickuser.PickUserContainer import PickUserContainer
 from src.dialog.common.table.TableContainer import TableContainer
+from src.dialog.common.table.data.TableFactory import TableFactory
 from src.dialog.impl.tkinter.DialogFactoryTkinter import DialogFactoryTkinter
 from src.session.common.Session import Session
 from src.session.impl.inmemory.SessionInMemory import SessionInMemory
@@ -36,11 +37,33 @@ entity_factory = EntityFactory(template_manager.entity_template)
 # EntityStorageJson - хранилище сущностей (дел) и информации о них
 entity_storage = EntityStorageJson(storage_folder + "entities.json", entity_factory)
 
+# TableFactory - фабрика табличных данных
+table_factory = TableFactory(template_manager.table_template)
+
+# DialogFactoryTkinter - фабрика диалогов на Tkinter библиотеке
 dialog_factory = DialogFactoryTkinter()
 
-manage_case_container = ManageEntityContainer(session, entity_storage, dialog_factory)
-form_doc_container = FormDocContainer(dialog_factory)
-table_container = TableContainer(manage_case_container, form_doc_container, session, entity_storage, dialog_factory)
-pick_user_container = PickUserContainer(table_container, user_storage, session, dialog_factory)
+manage_case_container = ManageEntityContainer(
+    session,
+    entity_storage,
+    dialog_factory
+)
+form_doc_container = FormDocContainer(
+    dialog_factory
+)
+table_container = TableContainer(
+    manage_case_container,
+    form_doc_container,
+    session,
+    entity_storage,
+    dialog_factory,
+    table_factory
+)
+pick_user_container = PickUserContainer(
+    table_container,
+    user_storage,
+    session,
+    dialog_factory
+)
 
 pick_user_container.show_dialog()

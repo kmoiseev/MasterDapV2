@@ -1,35 +1,18 @@
 {
     "887": {
-        "code_art": "16.3",
-        "code_part": "-",
-        "company": {
-            "address": {
-                "city": "г. Нижний Новгород",
-                "index": "603005",
-                "state": "Нижегородская обл.",
-                "street": "Ленина пр., д. 65, д. 1"
-            },
-            "date_reg": "22.03.2003",
-            "email": "ivashkin@gaz.ru",
-            "inn": "52014596",
-            "kpp": "52014501",
-            "name": "ООО «ГАЗ»",
-            "ogrn": "1052365489",
-            "representative": {
-                "name": "А.В. Ивашкин",
-                "position": "генеральный директор"
-            }
-        },
-        "day_init": "01",
-        "day_protokol": "11",
-        "day_rassm": "22",
-        "hour_protokol": "",
-        "hour_rassm": "",
-        "min_protokol": "",
-        "min_rassm": "",
-        "month_init": "мая",
-        "month_protokol": "февраля",
-        "month_rassm": "февраля",
-        "number_dt": "10418010/060920/0346596"
+        "case_code_art": "16.3",
+        "case_date_init": "двадацать пятое"
+    },
+    "881": {
+        "case_code_art": "116.3",
+        "case_date_init": "12двадацать пятое"
+    },
+    "8871": {
+        "case_code_art": "16.31",
+        "case_date_init": "двад2ацать пятое"
+    },
+    "8872": {
+        "case_code_art": "156.3",
+        "case_date_init": "д21вадацать пятое"
     }
 }
