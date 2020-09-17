@@ -33,9 +33,10 @@ class TableDialogPyQt(TableDialog, ABC):
                 table_widget.setHorizontalHeaderLabels(labels)
                 for k, row in enumerate(table.rows):
                     table_widget.insertRow(table_widget.rowCount())
-                    for j, val in enumerate(list(map(lambda cell: cell.value, row.cells))):
-                        table_widget.setItem(k, j, Qt.QTableWidgetItem(val))
-                        table_widget.resizeColumnsToContents()
+                    for j, cell in enumerate(row.cells):
+                        table_widget.setItem(k, j, Qt.QTableWidgetItem(cell.value))
+                        table_widget.item(k, j).setBackground(QColor('red' if cell.red else 'white'))
+                table_widget.resizeColumnsToContents()
                 table_widget.show()
                 layout.addWidget(table_widget)
 

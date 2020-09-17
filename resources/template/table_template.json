@@ -1,6 +1,18 @@
 {
   "columns": [
     {
+      "header": "",
+      "value": ""
+    },
+    {
+      "header": "",
+      "value": ""
+    },
+    {
+      "header": "",
+      "value": ""
+    },
+    {
       "header": "№ дела об АП",
       "value": "10418000-{number_case}/2020"
     },
@@ -18,7 +30,8 @@
     },
     {
       "header": "дата протокола",
-      "value": "{date_of_protokol}"
+      "value": "{date_of_protokol}",
+      "validation": "^(?!\\s*$).+"
     },
     {
       "header": "дата рассмотрения",

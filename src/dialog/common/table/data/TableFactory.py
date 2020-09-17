@@ -1,3 +1,4 @@
+import re
 from typing import List
 
 from src.dialog.common.table.data.Table import Table
@@ -6,6 +7,7 @@ from src.dialog.common.table.data.TableHeader import TableHeader
 from src.dialog.common.table.data.TableRow import TableRow
 from src.storage.common.entity.Entity import Entity
 from src.template.table.TableTemplate import TableTemplate
+from src.template.table.TableTemplateColumn import TableTemplateColumn
 from src.util.props.StringPropertyFormatter import StringPropertyFormatter
 
 
@@ -31,9 +33,24 @@ class TableFactory:
         formatter: StringPropertyFormatter = StringPropertyFormatter(entity.props)
         return TableRow(
             list(map(
-                lambda table_template_column: TableCell(
-                    formatter.format(table_template_column.value)
+                lambda table_template_column: TableFactory.__create_cell(
+                    formatter,
+                    table_template_column
                 ),
                 self.__table_template.columns
             ))
+        )
+
+    @staticmethod
+    def __create_cell(formatter: StringPropertyFormatter, column_template: TableTemplateColumn):
+        formatted_str: str = formatter.format(column_template.value)
+
+        red: bool = False
+        if column_template.validation is not None:
+            regexp = re.compile(column_template.validation)
+            red = not regexp.match(formatted_str)
+
+        return TableCell(
+            formatted_str,
+            red
         )
