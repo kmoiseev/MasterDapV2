@@ -1,18 +1,42 @@
 {
-    "887": {
-        "case_code_art": "16.3",
-        "case_date_init": "двадацать пятое"
-    },
-    "881": {
-        "case_code_art": "116.3",
-        "case_date_init": "12двадацать пятое"
-    },
-    "8871": {
-        "case_code_art": "16.31",
-        "case_date_init": "двад2ацать пятое"
-    },
-    "8872": {
-        "case_code_art": "156.3",
-        "case_date_init": "д21вадацать пятое"
-    }
+  "555": {
+    "number_case": "555",
+    "case_code_art": "16.2",
+    "case_code_part": "2",
+    "company_name": "ООО «Рога и копыта»",
+    "case_date_init": "15.09.2020",
+    "date_of_protokol": "15.10.2020",
+    "date_of_rassm": "30.10.2020",
+    "index": "603053",
+    "state": "Нижегородская обл.",
+    "city": "г. Нижний Новгород",
+    "street": "Бусыгина пр., д. 36, кв. 111",
+    "inn": "52348767",
+    "kpp": "52014601",
+    "ogrn": "5213652678",
+    "representative_position": "генеральный директор",
+    "representative_name": "А.П. Зайцев",
+    "email": "zaytsev@mail.ru",
+    "number_dt": "10418010/110220/0243021"
+  },
+  "777": {
+    "number_case": "777",
+    "case_code_art": "14.10",
+    "case_code_part": "1",
+    "company_name": "ООО «Компания»",
+    "case_date_init": "10.01.2020",
+    "date_of_protokol": "",
+    "date_of_rassm": "25.02.2020",
+    "index": "606000",
+    "state": "Нижегородская обл.",
+    "city": "г. Дзержинск",
+    "street": "Ленина ул., д. 1",
+    "inn": "52348767",
+    "kpp": "52014601",
+    "ogrn": "5213652678",
+    "representative_position": "директор",
+    "representative_name": "А.А. Сидоров",
+    "email": "sidorov@mail.ru",
+    "number_dt": "10418010/250220/0142759"
+  }
 }

@@ -1,22 +1,77 @@
 {
   "properties" : [
     {
+      "id": "number_case",
+      "type": "STRING"
+    },
+    {
+      "id": "company_name",
+      "type": "STRING"
+    },
+    {
+      "id": "date_of_protokol",
+      "type": "DATE"
+    },
+    {
+      "id": "date_of_rassm",
+      "type": "DATE"
+    },
+    {
+      "id": "index",
+      "type": "STRING"
+    },
+    {
+      "id": "state",
+      "type": "STRING"
+    },
+    {
+      "id": "city",
+      "type": "STRING"
+    },
+    {
+      "id": "street",
+      "type": "STRING"
+    },
+    {
+      "id": "inn",
+      "type": "STRING"
+    },
+    {
+      "id": "kpp",
+      "type": "STRING"
+    },
+    {
+      "id": "ogrn",
+      "type": "STRING"
+    },
+    {
       "id": "case_code_art",
-      "type": "DROPDOWN",
-      "dropdown_name" : "CASE"
+      "type": "STRING"
+    },
+    {
+      "id": "case_code_part",
+      "type": "STRING"
     },
     {
       "id": "case_date_init",
       "type": "DATE"
     },
     {
-      "id": "case_comp_inn",
+      "id": "representative_position",
+      "type": "DROPDOWN",
+      "dropdown_name" : "CASE_PART"
+    },
+    {
+      "id": "representative_name",
       "type": "STRING"
     },
     {
-      "id": "case_repr_pos",
-      "type": "DROPDOWN",
-      "dropdown_name" : "CASE_PART"
+      "id": "email",
+      "type": "STRING"
+    },
+    {
+      "id": "number_dt",
+      "type": "STRING"
     }
   ]
 }
