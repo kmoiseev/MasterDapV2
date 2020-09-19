@@ -10,8 +10,10 @@ from PyQt5.QtWidgets import QWidget
 from src.dialog.common.table.TableDialog import TableDialog
 from src.dialog.common.table.TableFuncs import TableFuncs
 from src.dialog.common.table.data.Table import Table
+from src.dialog.impl.pyqt.ButtonUtils import create_qt_button
 from src.template.TemplateManager import TemplateManager
 from src.template.table.TableTemplate import TableTemplate
+from src.storage.Icons import *
 
 
 class TableDialogPyQt(TableDialog, ABC):
@@ -26,7 +28,30 @@ class TableDialogPyQt(TableDialog, ABC):
 
             def __init__(self):
                 super().__init__()
+
+                def create_button_callback():
+                    pass
+
+                def edit_button_callback(deal_number, deal_json):
+                    pass
+
+                def delete_button_callback(chosen_deal_number):
+                    pass
+
+                def run_create_docs(chosen_deal, chosen_employee):
+                    pass
+
                 layout = Qt.QVBoxLayout(self)
+                icon_create = Qt.QIcon(CREATE)
+                icon_form = Qt.QIcon(FORM)
+                icon_edit = Qt.QIcon(EDIT)
+                icon_delete = Qt.QIcon(DELETE)
+
+                create_case_button = create_qt_button(icon_create, create_button_callback, "Создать ДАП")
+                create_case_button.setFixedWidth(110)
+                create_case_button.setFixedHeight(30)
+                layout.addWidget(create_case_button)
+
                 labels = list(map(lambda cell: cell.value, table.header.cells))
                 table_widget = Qt.QTableWidget(0, len(labels))
                 table_widget.setColumnHidden(len(labels), False)
@@ -35,7 +60,8 @@ class TableDialogPyQt(TableDialog, ABC):
                     table_widget.insertRow(table_widget.rowCount())
                     for j, cell in enumerate(row.cells):
                         table_widget.setItem(k, j, Qt.QTableWidgetItem(cell.value))
-                        table_widget.item(k, j).setBackground(QColor('red' if cell.red else 'white'))
+                        if j == 7 or j == 8:
+                            table_widget.item(k, j).setBackground(QColor('red' if cell.red else 'green'))
                 table_widget.resizeColumnsToContents()
                 table_widget.show()
                 layout.addWidget(table_widget)
