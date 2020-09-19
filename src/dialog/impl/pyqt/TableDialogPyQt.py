@@ -60,8 +60,17 @@ class TableDialogPyQt(TableDialog, ABC):
                     table_widget.insertRow(table_widget.rowCount())
                     for j, cell in enumerate(row.cells):
                         table_widget.setItem(k, j, Qt.QTableWidgetItem(cell.value))
+                        create_deal_button = create_qt_button(icon_form, run_create_docs, "Сформировать")
+                        edit_deal_button = create_qt_button(icon_edit, edit_button_callback)
+                        delete_deal_button = create_qt_button(icon_delete, delete_button_callback)
+
+                        table_widget.setCellWidget(j, 0, create_deal_button)
+                        table_widget.setCellWidget(j, 1, edit_deal_button)
+                        table_widget.setCellWidget(j, 2, delete_deal_button)
+
+
                         if j == 7 or j == 8:
-                            table_widget.item(k, j).setBackground(QColor('red' if cell.red else 'green'))
+                            table_widget.item(k, j).setBackground(QColor('orange' if cell.red else 'green'))
                 table_widget.resizeColumnsToContents()
                 table_widget.show()
                 layout.addWidget(table_widget)
