@@ -24,25 +24,25 @@ class TableDialogPyQt(TableDialog, ABC):
 
     def show(self):
         table: Table = self.funcs.get_table_data()
+        parent: TableDialogPyQt = self # Это костыль со ссылкой на родителя, потому что у тебя зачем-то внутренний класс создан
 
-        class ManageDealsWidget(QWidget):
+        class ManageDealsWidget(QWidget): # Зачем тут класс внутренний? Попробуй без него
 
             def __init__(self):
                 super().__init__()
 
                 def create_button_callback():
                     manage_deals_widget.setDisabled(True)
-                    # ?????????
-                    # TableContainer.create_deal()
+                    parent.funcs.create_deal()
 
                 def edit_button_callback(deal_number, deal_json):
-                    pass
+                    parent.funcs.edit_deal(deal_number)
 
                 def delete_button_callback(chosen_deal_number):
-                    pass
+                    parent.funcs.delete_deal(chosen_deal_number)
 
                 def run_create_docs(chosen_deal, chosen_employee):
-                    pass
+                    parent.funcs.form_doc(chosen_deal)
 
                 layout = Qt.QVBoxLayout(self)
                 icon_create = Qt.QIcon(CREATE)
@@ -69,7 +69,7 @@ class TableDialogPyQt(TableDialog, ABC):
                         table_widget.setCellWidget(j, 0, create_deal_button)
                         table_widget.setCellWidget(j, 1, edit_deal_button)
                         table_widget.setCellWidget(j, 2, delete_deal_button)
-                        if j == 7 or j == 8:
+                        if j == 7 or j == 8: # Костыль какой то
                             table_widget.item(k, j).setBackground(QColor('orange' if cell.red else 'green'))
                 table_widget.resizeColumnsToContents()
                 table_widget.show()
