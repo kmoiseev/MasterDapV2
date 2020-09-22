@@ -11,10 +11,8 @@ class PickUserDialogTk(PickUserDialog, ABC):
 
     def __init__(self, pick_user_funcs: PickUserFuncs):
         super().__init__(pick_user_funcs)
-
         self.root = Tk()
         self.root.protocol("WM_DELETE_WINDOW", self.funcs.closed_on_x)
-
         # Подготавливаем данные о пользователях для выпадающего списка
         users: List[User] = self.funcs.get_users()
         self.user_keys_by_names = {users[i].props["user_name"].get_val(): users[i].key for i in range(0, len(users))}
@@ -22,7 +20,6 @@ class PickUserDialogTk(PickUserDialog, ABC):
 
     def show(self):
         self.root.title("Pick User")
-
         mainframe = Frame(self.root)
         mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
         mainframe.columnconfigure(0, weight=1)
@@ -30,7 +27,6 @@ class PickUserDialogTk(PickUserDialog, ABC):
         mainframe.pack(pady=100, padx=100)
 
         tkvar = StringVar(self.root)
-
         choices = self.user_keys_by_names
         tkvar.set(self.first_user_name)
         popupMenu = OptionMenu(mainframe, tkvar, *choices)

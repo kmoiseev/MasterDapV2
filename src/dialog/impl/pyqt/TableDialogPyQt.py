@@ -10,6 +10,7 @@ from PyQt5.QtWidgets import QWidget
 from src.dialog.common.table.TableDialog import TableDialog
 from src.dialog.common.table.TableFuncs import TableFuncs
 from src.dialog.common.table.data.Table import Table
+from src.dialog.common.table.TableContainer import TableContainer
 from src.dialog.impl.pyqt.ButtonUtils import create_qt_button
 from src.template.TemplateManager import TemplateManager
 from src.template.table.TableTemplate import TableTemplate
@@ -30,7 +31,9 @@ class TableDialogPyQt(TableDialog, ABC):
                 super().__init__()
 
                 def create_button_callback():
-                    pass
+                    manage_deals_widget.setDisabled(True)
+                    # ?????????
+                    # TableContainer.create_deal()
 
                 def edit_button_callback(deal_number, deal_json):
                     pass
@@ -63,12 +66,9 @@ class TableDialogPyQt(TableDialog, ABC):
                         create_deal_button = create_qt_button(icon_form, run_create_docs, "Сформировать")
                         edit_deal_button = create_qt_button(icon_edit, edit_button_callback)
                         delete_deal_button = create_qt_button(icon_delete, delete_button_callback)
-
                         table_widget.setCellWidget(j, 0, create_deal_button)
                         table_widget.setCellWidget(j, 1, edit_deal_button)
                         table_widget.setCellWidget(j, 2, delete_deal_button)
-
-
                         if j == 7 or j == 8:
                             table_widget.item(k, j).setBackground(QColor('orange' if cell.red else 'green'))
                 table_widget.resizeColumnsToContents()
