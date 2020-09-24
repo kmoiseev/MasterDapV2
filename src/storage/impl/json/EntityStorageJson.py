@@ -30,6 +30,10 @@ class EntityStorageJson(EntityStorage):
         entities_json[entity.key] = EntitySerializer.serialize(entity.props)
         JsonWriter(self.__file_path, entities_json).write()
 
+    def check_entity_exists(self, key: str) -> bool:
+        entities_json: Dict = JsonReader(self.__file_path).read()
+        return key in entities_json
+
     def get_entity(self, key) -> Entity:
         entities_json = JsonReader(self.__file_path).read()
         return self.entity_factory.create(

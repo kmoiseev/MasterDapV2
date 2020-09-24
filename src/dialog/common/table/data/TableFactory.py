@@ -32,6 +32,7 @@ class TableFactory:
     def __entity_to_table_row(self, entity: Entity) -> TableRow:
         formatter: StringPropertyFormatter = StringPropertyFormatter(entity.props)
         return TableRow(
+            entity.key,
             list(map(
                 lambda table_template_column: TableFactory.__create_cell(
                     formatter,

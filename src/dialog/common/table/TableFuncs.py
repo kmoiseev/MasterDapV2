@@ -10,15 +10,15 @@ class TableFuncs:
         pass
 
     @abstractmethod
-    def create_deal(self):
+    def create_entity(self):
         pass
 
     @abstractmethod
-    def edit_deal(self, key: str):
+    def edit_entity(self, key: str):
         pass
 
     @abstractmethod
-    def delete_deal(self, key):
+    def delete_entity(self, key):
         pass
 
     @abstractmethod

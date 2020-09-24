@@ -46,7 +46,8 @@ dialog_factory = DialogFactoryImpl()
 manage_case_container = ManageEntityContainer(
     session,
     entity_storage,
-    dialog_factory
+    dialog_factory,
+    entity_factory
 )
 form_doc_container = FormDocContainer(
     dialog_factory

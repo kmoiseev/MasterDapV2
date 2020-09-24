@@ -10,3 +10,6 @@ class Dialog:
     @abstractmethod
     def close(self):
         pass
+
+    def show_error(self, message):
+        pass

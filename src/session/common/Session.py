@@ -1,5 +1,7 @@
 from abc import abstractmethod
 
+from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
+
 
 class Session:
 
@@ -12,11 +14,19 @@ class Session:
         pass
 
     @abstractmethod
-    def set_edit_entity_id(self, doc_id: str) -> str:
+    def set_edit_entity_id(self, entity_id: str):
         pass
 
     @abstractmethod
-    def get_edit_entity_id(self) -> str:
+    def get_edit_entity_key(self) -> str:
+        pass
+
+    @abstractmethod
+    def set_manage_entity_mode(self, mode: ManageEntityDialogMode):
+        pass
+
+    @abstractmethod
+    def get_manage_entity_mode(self) -> ManageEntityDialogMode:
         pass
 
     @abstractmethod

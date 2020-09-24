@@ -33,15 +33,15 @@ class TableDialogPyQt(TableDialog, ABC):
 
                 def create_button_callback():
                     manage_deals_widget.setDisabled(True)
-                    parent.funcs.create_deal()
+                    parent.funcs.create_entity()
 
-                def edit_button_callback(deal_number, deal_json):
-                    parent.funcs.edit_deal(deal_number)
+                def edit_button_callback(entity_key):
+                    parent.funcs.edit_entity(entity_key)
 
-                def delete_button_callback(chosen_deal_number):
-                    parent.funcs.delete_deal(chosen_deal_number)
+                def delete_button_callback(entity_key):
+                    parent.funcs.delete_entity(entity_key)
 
-                def run_create_docs(chosen_deal, chosen_employee):
+                def run_create_docs(chosen_deal):
                     parent.funcs.form_doc(chosen_deal)
 
                 layout = Qt.QVBoxLayout(self)
@@ -64,8 +64,8 @@ class TableDialogPyQt(TableDialog, ABC):
                     for j, cell in enumerate(row.cells):
                         table_widget.setItem(k, j, Qt.QTableWidgetItem(cell.value))
                         create_deal_button = create_qt_button(icon_form, run_create_docs, "Сформировать")
-                        edit_deal_button = create_qt_button(icon_edit, edit_button_callback)
-                        delete_deal_button = create_qt_button(icon_delete, delete_button_callback)
+                        edit_deal_button = create_qt_button(icon_edit, lambda: edit_button_callback(row.entity_key))
+                        delete_deal_button = create_qt_button(icon_delete, lambda: delete_button_callback(row.entity_key))
                         table_widget.setCellWidget(j, 0, create_deal_button)
                         table_widget.setCellWidget(j, 1, edit_deal_button)
                         table_widget.setCellWidget(j, 2, delete_deal_button)
@@ -84,5 +84,12 @@ class TableDialogPyQt(TableDialog, ABC):
         manage_deals_widget.show()
         app.exec()
 
+    def update_table_content(self):
+        # todo - перерисовать тоблицу
+        pass
+
     def close(self):
         sys.exit()
+
+    def draw_table(self):
+        pass

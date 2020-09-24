@@ -22,6 +22,10 @@ class EntityStorage:
         pass
 
     @abstractmethod
+    def check_entity_exists(self, key: str) -> bool:
+        pass
+
+    @abstractmethod
     def get_entity(self, key) -> Entity:
         pass
 

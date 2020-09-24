@@ -8,3 +8,6 @@ class TableDialog(Dialog, metaclass=ABCMeta):
 
     def __init__(self, table_funcs: TableFuncs):
         self.funcs = table_funcs
+
+    def update_table_content(self):
+        pass

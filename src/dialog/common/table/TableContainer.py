@@ -5,6 +5,7 @@ from src.dialog.common.DialogContainer import DialogContainer
 from src.dialog.common.DialogFactory import DialogFactory
 from src.dialog.common.formdoc import FormDocContainer
 from src.dialog.common.manageentity import ManageEntityContainer
+from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
 from src.dialog.common.table.TableFuncs import TableFuncs
 from src.dialog.common.table.data.Table import Table
 from src.dialog.common.table.data.TableFactory import TableFactory
@@ -34,16 +35,18 @@ class TableContainer(DialogContainer, TableFuncs):
         self.__session.set_form_doc_entity_id(key)
         self.__form_doc_container.show_dialog()
 
-    def create_deal(self):
-        self.__session.set_edit_entity_id("")
+    def create_entity(self):
+        self.__session.set_manage_entity_mode(ManageEntityDialogMode.CREATE)
         self.__manage_case_container.show_dialog()
 
-    def edit_deal(self, key: str):
+    def edit_entity(self, key: str):
+        self.__session.set_manage_entity_mode(ManageEntityDialogMode.EDIT)
         self.__session.set_edit_entity_id(key)
         self.__manage_case_container.show_dialog()
 
-    def delete_deal(self, key):
+    def delete_entity(self, key):
         self.__entity_storage.remove_entity(key)
+        self.dialog.update_table_content()
 
     def get_table_data(self) -> Table:
         return self.__table_factory.create(self.__entity_storage.get_all_entities())
