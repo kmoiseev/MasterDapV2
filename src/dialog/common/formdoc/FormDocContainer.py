@@ -15,3 +15,6 @@ class FormDocContainer(DialogContainer, FormDocFuncs):
 
     def create_dialog(self) -> Dialog:
         return self.dialog_factory.create_form_doc_dialog(self)
+
+    def closed_on_x(self):
+        self.close_dialog()

@@ -25,11 +25,17 @@ class TableContainer(DialogContainer, TableFuncs):
             table_factory: TableFactory
     ):
         super().__init__(dialog_factory)
-        self.__manage_case_container = manage_entity_container
+        self.__manage_entity_container = manage_entity_container
         self.__form_doc_container = form_doc_container
         self.__session = session
         self.__entity_storage = entity_storage
         self.__table_factory = table_factory
+
+        self.__manage_entity_container.set_parent_container(self)
+        self.__form_doc_container.set_parent_container(self)
+
+    def create_dialog(self) -> Dialog:
+        return self.dialog_factory.create_table_dialog(self)
 
     def form_doc(self, key: str):
         self.__session.set_form_doc_entity_id(key)
@@ -37,22 +43,16 @@ class TableContainer(DialogContainer, TableFuncs):
 
     def create_entity(self):
         self.__session.set_manage_entity_mode(ManageEntityDialogMode.CREATE)
-        self.__manage_case_container.show_dialog()
+        self.__manage_entity_container.show_dialog()
 
     def edit_entity(self, key: str):
         self.__session.set_manage_entity_mode(ManageEntityDialogMode.EDIT)
         self.__session.set_edit_entity_id(key)
-        self.__manage_case_container.show_dialog()
+        self.__manage_entity_container.show_dialog()
 
     def delete_entity(self, key):
         self.__entity_storage.remove_entity(key)
-        self.dialog.update_table_content()
+        self.dialog.draw_table()
 
     def get_table_data(self) -> Table:
         return self.__table_factory.create(self.__entity_storage.get_all_entities())
-
-    def create_dialog(self) -> Dialog:
-        return self.dialog_factory.create_table_dialog(self)
-
-    def closed_on_x(self):
-        sys.exit()

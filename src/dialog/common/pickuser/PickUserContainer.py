@@ -24,16 +24,16 @@ class PickUserContainer(DialogContainer, PickUserFuncs):
         self.__config_storage = config_storage
         self.__session = session
 
+    def create_dialog(self) -> Dialog:
+        return self.dialog_factory.create_pick_user_dialog(self)
+
     def get_users(self) -> List[User]:
         return self.__config_storage.get_users()
 
     def user_selected(self, key):
         self.__session.set_user_id(key)
-        self.dialog.close()
+        self.close_dialog()
         self.__table_container.show_dialog()
 
     def closed_on_x(self):
         sys.exit()
-
-    def create_dialog(self) -> Dialog:
-        return self.dialog_factory.create_pick_user_dialog(self)

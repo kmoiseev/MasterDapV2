@@ -7,6 +7,11 @@ class Dialog:
     def show(self):
         pass
 
-    @abstractmethod
     def close(self):
+        pass
+
+    def enable(self):
+        pass
+
+    def disable(self):
         pass

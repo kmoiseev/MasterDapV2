@@ -12,6 +12,7 @@ class ManageEntityDialogTk(ManageEntityDialog):
     def __init__(self, manage_entity_funcs: ManageEntityFuncs):
         super().__init__(manage_entity_funcs)
         self.root = Tk()
+        self.root.protocol("WM_DELETE_WINDOW", self.funcs.closed_on_x)
 
     def show(self):
 

@@ -51,4 +51,7 @@ class ManageEntityContainer(DialogContainer, ManageEntityFuncs):
             Entity(key, props)
         )
 
-        self.dialog.close()
+        self.close_dialog()
+
+    def closed_on_x(self):
+        self.close_dialog()

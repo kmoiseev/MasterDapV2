@@ -27,3 +27,7 @@ class ManageEntityFuncs:
     @abstractmethod
     def save_entity(self, key: str, props: Dict[str, Property]):
         pass
+
+    @abstractmethod
+    def closed_on_x(self):
+        pass

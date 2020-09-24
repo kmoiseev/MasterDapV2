@@ -24,7 +24,3 @@ class TableFuncs:
     @abstractmethod
     def get_table_data(self) -> Table:
         pass
-
-    @abstractmethod
-    def closed_on_x(self):
-        pass
