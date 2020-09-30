@@ -65,27 +65,33 @@ class TableDialogPyQt(TableDialog, ABC):
         table_widget.setHorizontalHeaderLabels(labels)
         for k, row in enumerate(table.rows):
             table_widget.insertRow(table_widget.rowCount())
+
             for j, cell in enumerate(row.cells):
                 table_widget.setItem(k, j, Qt.QTableWidgetItem(cell.value))
-                create_deal_button = create_qt_button(
-                    Qt.QIcon(FORM),
-                    lambda: self.funcs.form_doc(row.entity_key),
-                    "Сформировать"
-                )
-                edit_deal_button = create_qt_button(
-                    Qt.QIcon(EDIT),
-                    lambda: self.funcs.edit_entity(row.entity_key)
-                )
-                delete_deal_button = create_qt_button(
-                    Qt.QIcon(DELETE),
-                    lambda: self.funcs.delete_entity(row.entity_key)
-                )
-                table_widget.setCellWidget(j, 0, create_deal_button)
-                table_widget.setCellWidget(j, 1, edit_deal_button)
-                table_widget.setCellWidget(j, 2, delete_deal_button)
                 if j == 7 or j == 8:  # Костыль какой то
                     table_widget.item(k, j).setBackground(QColor('orange' if cell.red else 'green'))
+
+            self.draw_table_entity_buttons(k, row.entity_key)
+
         table_widget.resizeColumnsToContents()
+
+    def draw_table_entity_buttons(self, row_number: int, entity_key: str):
+        create_deal_button = create_qt_button(
+            Qt.QIcon(FORM),
+            lambda: self.funcs.form_doc(entity_key),
+            "Сформировать"
+        )
+        edit_deal_button = create_qt_button(
+            Qt.QIcon(EDIT),
+            lambda: self.funcs.edit_entity(entity_key)
+        )
+        delete_deal_button = create_qt_button(
+            Qt.QIcon(DELETE),
+            lambda: self.funcs.delete_entity(entity_key)
+        )
+        self.table_widget.setCellWidget(row_number, 0, create_deal_button)
+        self.table_widget.setCellWidget(row_number, 1, edit_deal_button)
+        self.table_widget.setCellWidget(row_number, 2, delete_deal_button)
 
     def enable(self):
         self.dialog_widget.setDisabled(False)
