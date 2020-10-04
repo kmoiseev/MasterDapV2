@@ -47,7 +47,8 @@ manage_case_container = ManageEntityContainer(
     session,
     entity_storage,
     dialog_factory,
-    entity_factory
+    entity_factory,
+    template_manager.entity_template
 )
 form_doc_container = FormDocContainer(
     dialog_factory

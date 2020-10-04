@@ -14,7 +14,7 @@ class ManageEntityFuncs:
         pass
 
     @abstractmethod
-    def get_entity_key(self) -> str:
+    def get_entity_key_property_id(self) -> str:
         pass
 
     def get_entity_props_templates(self) -> List[PropertyTemplate]:

@@ -1,5 +1,5 @@
 from tkinter import Tk, Button
-from typing import List
+from typing import List, Dict
 
 from src.dialog.common.manageentity.ManageEntityDialog import ManageEntityDialog
 from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
@@ -45,15 +45,17 @@ class ManageEntityDialogTk(ManageEntityDialog):
         self.root.mainloop()
 
     def save_entity(self, widgets: List[PropertyWidgetTk]):
+        properties_for_save: Dict[str, Property] = {
+            widgets[i].prop_tmpl.id: Property(widgets[i].prop_tmpl, widgets[i].get_val())
+            for i in range(0, len(widgets))
+        }
         self.funcs.save_entity(
-            self.funcs.get_entity_key(),
-            {
-                widgets[i].prop_tmpl.id: Property(widgets[i].prop_tmpl, widgets[i].get_val())
-                for i in range(0, len(widgets))
-            }
+            properties_for_save[self.funcs.get_entity_key_property_id()].get_val(),
+            properties_for_save
         )
 
     def show_error(self, message: str):
+        # todo
         pass
 
     def close(self):
