@@ -1,4 +1,4 @@
-from tkinter import Tk
+from tkinter import Tk, Button
 from typing import List
 
 from src.dialog.common.manageentity.ManageEntityDialog import ManageEntityDialog
@@ -20,8 +20,10 @@ class ManageEntityDialogTk(ManageEntityDialog):
 
         if self.funcs.get_mode() == ManageEntityDialogMode.CREATE:
             self.root.title("New Case")
+            text_button = "Save"
         else:
             self.root.title("Edit Case")
+            text_button = "Edit"
 
         props: List[PropertyTemplate] = self.funcs.get_entity_props_templates()
 
@@ -36,6 +38,9 @@ class ManageEntityDialogTk(ManageEntityDialog):
         if self.funcs.get_mode() == ManageEntityDialogMode.EDIT:
             for widget in widgets:
                 widget.set_val(self.funcs.get_entity_prop_value(widget.prop_tmpl.id))
+
+        Button(self.root, text=text_button,
+               command=lambda: self.funcs.save_entity(self.funcs.get_entity_key, props)).grid()
 
         self.root.mainloop()
 

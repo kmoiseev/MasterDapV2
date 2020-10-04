@@ -58,21 +58,17 @@ class TableDialogPyQt(TableDialog, ABC):
     def draw_table(self):
         table_widget = self.table_widget
         table = self.funcs.get_table_data()
-
         table_widget.setRowCount(0)
         labels = list(map(lambda x: x.value, table.header.cells))
         table_widget.setColumnHidden(len(labels), False)
         table_widget.setHorizontalHeaderLabels(labels)
         for k, row in enumerate(table.rows):
             table_widget.insertRow(table_widget.rowCount())
-
             for j, cell in enumerate(row.cells):
                 table_widget.setItem(k, j, Qt.QTableWidgetItem(cell.value))
-                if j == 7 or j == 8:  # Костыль какой то
+                if j in [3, 4]:
                     table_widget.item(k, j).setBackground(QColor('orange' if cell.red else 'green'))
-
             self.draw_table_entity_buttons(k, row.entity_key)
-
         table_widget.resizeColumnsToContents()
 
     def draw_table_entity_buttons(self, row_number: int, entity_key: str):

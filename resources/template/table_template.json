@@ -12,6 +12,15 @@
       "header": "",
       "value": ""
     },
+        {
+      "header": "дата протокола",
+      "value": "{date_of_protokol}",
+      "validation": "^(?!\\s*$).+"
+    },
+    {
+      "header": "дата рассмотрения",
+      "value": "{date_of_rassm}"
+    },
     {
       "header": "№ дела об АП",
       "value": "10418000-{number_case}/2020"
@@ -27,15 +36,6 @@
     {
       "header": "дата возбуждения",
       "value": "{case_date_init}"
-    },
-    {
-      "header": "дата протокола",
-      "value": "{date_of_protokol}",
-      "validation": "^(?!\\s*$).+"
-    },
-    {
-      "header": "дата рассмотрения",
-      "value": "{date_of_rassm}"
     },
     {
       "header": "юридический адрес",
