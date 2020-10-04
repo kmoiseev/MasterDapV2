@@ -25,11 +25,11 @@ class ManageEntityDialogTk(ManageEntityDialog):
             self.root.title("Edit Case")
             text_button = "Edit"
 
-        props: List[PropertyTemplate] = self.funcs.get_entity_props_templates()
+        props_templates: List[PropertyTemplate] = self.funcs.get_entity_props_templates()
 
         widgets: List[PropertyWidgetTk] = list(map(
             PropertyWidgetFactoryTk.create,
-            props
+            props_templates
         ))
 
         for rn, widget in enumerate(widgets):
@@ -40,7 +40,7 @@ class ManageEntityDialogTk(ManageEntityDialog):
                 widget.set_val(self.funcs.get_entity_prop_value(widget.prop_tmpl.id))
 
         Button(self.root, text=text_button,
-               command=lambda: self.funcs.save_entity(self.funcs.get_entity_key, props)).grid()
+               command=lambda: self.funcs.save_entity(self.funcs.get_entity_key, props_templates)).grid()
 
         self.root.mainloop()
 
