@@ -4,6 +4,7 @@ from typing import List
 from src.dialog.common.manageentity.ManageEntityDialog import ManageEntityDialog
 from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
 from src.dialog.common.manageentity.ManageEntityFuncs import ManageEntityFuncs
+from src.property.Property import Property
 from src.template.property.PropertyTemplate import PropertyTemplate
 from src.widget.property.impl.PropertyWidgetFactoryTk import PropertyWidgetFactoryTk
 from src.widget.property.impl.PropertyWidgetTk import PropertyWidgetTk
@@ -39,10 +40,18 @@ class ManageEntityDialogTk(ManageEntityDialog):
             for widget in widgets:
                 widget.set_val(self.funcs.get_entity_prop_value(widget.prop_tmpl.id))
 
-        Button(self.root, text=text_button,
-               command=lambda: self.funcs.save_entity(self.funcs.get_entity_key, props_templates)).grid()
+        Button(self.root, text=text_button, command=lambda: self.save_entity(widgets)).grid()
 
         self.root.mainloop()
+
+    def save_entity(self, widgets: List[PropertyWidgetTk]):
+        self.funcs.save_entity(
+            self.funcs.get_entity_key(),
+            {
+                widgets[i].prop_tmpl.id: Property(widgets[i].prop_tmpl, widgets[i].get_val())
+                for i in range(0, len(widgets))
+            }
+        )
 
     def show_error(self, message: str):
         pass

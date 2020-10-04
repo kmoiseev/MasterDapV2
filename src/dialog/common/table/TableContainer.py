@@ -56,3 +56,9 @@ class TableContainer(DialogContainer, TableFuncs):
 
     def get_table_data(self) -> Table:
         return self.__table_factory.create(self.__entity_storage.get_all_entities())
+
+    # Перерисуем таблицу, когда закрывается диалог редактирования сущности
+    def child_unfocused(self):
+        super().child_unfocused()
+        self.dialog.draw_table()
+
