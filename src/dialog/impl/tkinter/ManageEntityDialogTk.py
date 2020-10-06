@@ -1,4 +1,4 @@
-from tkinter import Tk, Button
+from tkinter import Tk, Button, messagebox
 from typing import List, Dict
 
 from src.dialog.common.manageentity.ManageEntityDialog import ManageEntityDialog
@@ -55,7 +55,7 @@ class ManageEntityDialogTk(ManageEntityDialog):
         )
 
     def show_error(self, message: str):
-        # todo
+        messagebox.showerror("Ошибка", message)
         pass
 
     def close(self):

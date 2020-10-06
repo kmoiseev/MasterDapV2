@@ -44,17 +44,31 @@ class ManageEntityContainer(DialogContainer, ManageEntityFuncs):
         return self.__entity_storage.get_entity(self.__session.get_edit_entity_key()).props[prop_id].value
 
     def save_entity(self, key: str, props: Dict[str, Property]):
-        if self.__session.get_manage_entity_mode() == ManageEntityDialogMode.CREATE or \
-                self.__session.get_manage_entity_mode() == ManageEntityDialogMode.EDIT and \
+        if self.__session.get_manage_entity_mode() == ManageEntityDialogMode.CREATE and \
                 self.__session.get_edit_entity_key() != key:
-            if self.__entity_storage.check_entity_exists(key):
-                self.dialog.show_error("Ключ уже существует")
-
-        self.__entity_storage.put_entity(
-            Entity(key, props)
-        )
-
-        self.close_dialog()
+            if not self.__entity_storage.check_entity_exists(key):
+                self.__entity_storage.put_entity(
+                    Entity(key, props)
+                )
+                self.close_dialog()
+            else:
+                self.dialog.show_error("Дело об АП уже существует")
+        elif self.__session.get_manage_entity_mode() == ManageEntityDialogMode.EDIT and \
+                self.__session.get_edit_entity_key() != key:
+            if not self.__entity_storage.check_entity_exists(key):
+                self.__entity_storage.put_entity(
+                    Entity(key, props)
+                )
+                self.__entity_storage.remove_entity(self.__session.get_edit_entity_key())
+                self.close_dialog()
+            else:
+                self.dialog.show_error("Дело об АП уже существует")
+        elif self.__session.get_manage_entity_mode() == ManageEntityDialogMode.EDIT and \
+                self.__session.get_edit_entity_key() == key:
+            self.__entity_storage.put_entity(
+                Entity(key, props)
+            )
+            self.close_dialog()
 
     def closed_on_x(self):
         self.close_dialog()
