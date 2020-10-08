@@ -1,9 +1,9 @@
 from tkinter import Tk, Button, messagebox
 from typing import List, Dict
 
-from src.dialog.common.manageentity.ManageEntityDialog import ManageEntityDialog
-from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
-from src.dialog.common.manageentity.ManageEntityFuncs import ManageEntityFuncs
+from src.dialog.common.manage_entity.ManageEntityDialog import ManageEntityDialog
+from src.dialog.common.manage_entity.ManageEntityDialogMode import ManageEntityDialogMode
+from src.dialog.common.manage_entity.ManageEntityFuncs import ManageEntityFuncs
 from src.property.Property import Property
 from src.template.property.PropertyTemplate import PropertyTemplate
 from src.widget.property.impl.PropertyWidgetFactoryTk import PropertyWidgetFactoryTk

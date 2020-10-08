@@ -1,4 +1,4 @@
-from tkinter import Tk, Widget, Label, Entry, END
+from tkinter import Tk, Label, Entry, END
 
 from src.property.PropertyValue import PropertyValue
 from src.template.property.PropertyTemplate import PropertyTemplate

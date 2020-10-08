@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import Dict, List
 
-from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
+from src.dialog.common.manage_entity.ManageEntityDialogMode import ManageEntityDialogMode
 from src.property.Property import Property
 from src.property.PropertyValue import PropertyValue
 from src.template.property.PropertyTemplate import PropertyTemplate

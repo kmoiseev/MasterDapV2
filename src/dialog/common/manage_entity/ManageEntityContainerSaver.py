@@ -1,6 +1,6 @@
 from typing import Dict, Callable
 
-from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
+from src.dialog.common.manage_entity.ManageEntityDialogMode import ManageEntityDialogMode
 from src.property.Property import Property
 from src.session.common.Session import Session
 from src.storage.common.entity.Entity import Entity

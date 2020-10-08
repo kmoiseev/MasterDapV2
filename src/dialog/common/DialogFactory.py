@@ -1,11 +1,11 @@
 from abc import abstractmethod
 
-from src.dialog.common.formdoc import FormDocDialog
-from src.dialog.common.formdoc import FormDocFuncs
-from src.dialog.common.manageentity import ManageEntityDialog
-from src.dialog.common.manageentity import ManageEntityFuncs
-from src.dialog.common.pickuser.PickUserDialog import PickUserDialog
-from src.dialog.common.pickuser.PickUserFuncs import PickUserFuncs
+from src.dialog.common.form_doc import FormDocDialog
+from src.dialog.common.form_doc import FormDocFuncs
+from src.dialog.common.manage_entity import ManageEntityDialog
+from src.dialog.common.manage_entity import ManageEntityFuncs
+from src.dialog.common.pick_user.PickUserDialog import PickUserDialog
+from src.dialog.common.pick_user.PickUserFuncs import PickUserFuncs
 from src.dialog.common.table.TableDialog import TableDialog
 from src.dialog.common.table.TableFuncs import TableFuncs
 

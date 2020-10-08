@@ -3,13 +3,12 @@ from typing import Dict, List
 from src.dialog.common.Dialog import Dialog
 from src.dialog.common.DialogContainer import DialogContainer
 from src.dialog.common.DialogFactory import DialogFactory
-from src.dialog.common.manageentity.ManageEntityContainerSaver import ManageEntityContainerSaver
-from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
-from src.dialog.common.manageentity.ManageEntityFuncs import ManageEntityFuncs
+from src.dialog.common.manage_entity.ManageEntityContainerSaver import ManageEntityContainerSaver
+from src.dialog.common.manage_entity.ManageEntityDialogMode import ManageEntityDialogMode
+from src.dialog.common.manage_entity.ManageEntityFuncs import ManageEntityFuncs
 from src.property.Property import Property
 from src.property.PropertyValue import PropertyValue
 from src.session.common.Session import Session
-from src.storage.common.entity.Entity import Entity
 from src.storage.common.entity.EntityFactory import EntityFactory
 from src.storage.common.entity.EntityStorage import EntityStorage
 from src.template.entity.EntityTemplate import EntityTemplate
@@ -18,11 +17,14 @@ from src.template.property.PropertyTemplate import PropertyTemplate
 
 class ManageEntityContainer(DialogContainer, ManageEntityFuncs):
 
-    def __init__(self, session: Session,
-                 entity_storage: EntityStorage,
-                 dialog_factory: DialogFactory,
-                 entity_factory: EntityFactory,
-                 entity_template: EntityTemplate):
+    def __init__(
+            self,
+            session: Session,
+            entity_storage: EntityStorage,
+            dialog_factory: DialogFactory,
+            entity_factory: EntityFactory,
+            entity_template: EntityTemplate
+    ):
         super().__init__(dialog_factory)
         self.__session = session
         self.__entity_storage = entity_storage

@@ -1,4 +1,4 @@
-from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
+from src.dialog.common.manage_entity.ManageEntityDialogMode import ManageEntityDialogMode
 from src.session.common.Session import Session
 
 
@@ -30,10 +30,10 @@ class SessionInMemory(Session):
     def get_manage_entity_mode(self) -> ManageEntityDialogMode:
         return self.manage_entity_mode
 
-    def set_form_doc_entity_id(self, entity_id: str):
+    def set_form_doc_entity_key(self, entity_id: str):
         self.form_doc_entity_id = entity_id
 
-    def get_form_doc_entity_id(self) -> str:
+    def get_form_doc_entity_key(self) -> str:
         return self.form_doc_entity_id
 
 

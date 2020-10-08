@@ -1,6 +1,6 @@
 from abc import abstractmethod
 
-from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
+from src.dialog.common.manage_entity.ManageEntityDialogMode import ManageEntityDialogMode
 
 
 class Session:
@@ -30,9 +30,9 @@ class Session:
         pass
 
     @abstractmethod
-    def set_form_doc_entity_id(self, entity_id: str):
+    def set_form_doc_entity_key(self, entity_id: str):
         pass
 
     @abstractmethod
-    def get_form_doc_entity_id(self) -> str:
+    def get_form_doc_entity_key(self) -> str:
         pass

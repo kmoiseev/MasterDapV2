@@ -1,7 +1,7 @@
 from abc import ABCMeta
 
 from src.dialog.common.Dialog import Dialog
-from src.dialog.common.formdoc import FormDocFuncs
+from src.dialog.common.form_doc import FormDocFuncs
 
 
 class FormDocDialog(Dialog, metaclass=ABCMeta):

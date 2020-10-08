@@ -1,3 +1,4 @@
+from src.template.doc.DocsTemplates import DocsTemplates
 from src.template.entity.EntityTemplate import EntityTemplate
 from src.template.property.PropertyTemplateFactory import PropertyTemplateFactory
 from src.template.property.PropertyTypeConfig import PropertyTypeConfig
@@ -20,4 +21,8 @@ class TemplateManager:
         )
         self.table_template = TableTemplate(
             JsonReader(template_folder + 'table_template.json').read()
+        )
+        self.docs_templates = DocsTemplates(
+            JsonReader(template_folder + 'doc_template.json').read(),
+            self.property_template_factory
         )

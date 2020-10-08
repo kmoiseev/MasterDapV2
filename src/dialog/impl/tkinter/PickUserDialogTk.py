@@ -2,8 +2,8 @@ from abc import ABC
 from tkinter import Tk, Frame, W, N, E, S, StringVar, OptionMenu, Label, Button
 from typing import List
 
-from src.dialog.common.pickuser.PickUserDialog import PickUserDialog
-from src.dialog.common.pickuser.PickUserFuncs import PickUserFuncs
+from src.dialog.common.pick_user.PickUserDialog import PickUserDialog
+from src.dialog.common.pick_user.PickUserFuncs import PickUserFuncs
 from src.storage.common.user.User import User
 
 

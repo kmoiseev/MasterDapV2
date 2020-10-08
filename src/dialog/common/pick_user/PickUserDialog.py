@@ -1,7 +1,7 @@
 from abc import ABCMeta
 
 from src.dialog.common.Dialog import Dialog
-from src.dialog.common.pickuser.PickUserFuncs import PickUserFuncs
+from src.dialog.common.pick_user.PickUserFuncs import PickUserFuncs
 
 
 class PickUserDialog(Dialog, metaclass=ABCMeta):

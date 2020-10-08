@@ -4,7 +4,7 @@ from typing import List
 from src.dialog.common.Dialog import Dialog
 from src.dialog.common.DialogContainer import DialogContainer
 from src.dialog.common.DialogFactory import DialogFactory
-from src.dialog.common.pickuser.PickUserFuncs import PickUserFuncs
+from src.dialog.common.pick_user.PickUserFuncs import PickUserFuncs
 from src.session.common.Session import Session
 from src.storage.common.user.User import User
 from src.storage.common.user.UserStorage import UserStorage

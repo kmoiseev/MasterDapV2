@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
 from src.dialog.common.Dialog import Dialog
-from src.dialog.common.manageentity import ManageEntityFuncs
+from src.dialog.common.manage_entity import ManageEntityFuncs
 
 
 class ManageEntityDialog(Dialog, metaclass=ABCMeta):

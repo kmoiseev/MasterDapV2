@@ -3,9 +3,9 @@ import sys
 from src.dialog.common.Dialog import Dialog
 from src.dialog.common.DialogContainer import DialogContainer
 from src.dialog.common.DialogFactory import DialogFactory
-from src.dialog.common.formdoc import FormDocContainer
-from src.dialog.common.manageentity import ManageEntityContainer
-from src.dialog.common.manageentity.ManageEntityDialogMode import ManageEntityDialogMode
+from src.dialog.common.form_doc import FormDocContainer
+from src.dialog.common.manage_entity import ManageEntityContainer
+from src.dialog.common.manage_entity.ManageEntityDialogMode import ManageEntityDialogMode
 from src.dialog.common.table.TableFuncs import TableFuncs
 from src.dialog.common.table.data.Table import Table
 from src.dialog.common.table.data.TableFactory import TableFactory
@@ -38,7 +38,7 @@ class TableContainer(DialogContainer, TableFuncs):
         return self.dialog_factory.create_table_dialog(self)
 
     def form_doc(self, key: str):
-        self.__session.set_form_doc_entity_id(key)
+        self.__session.set_form_doc_entity_key(key)
         self.__form_doc_container.show_dialog()
 
     def create_entity(self):
