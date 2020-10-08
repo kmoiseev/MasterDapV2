@@ -8,7 +8,9 @@ class SessionInMemory(Session):
         self.user_id = ''
         self.doc_id = ''
         self.edit_entity_id = ''
+        self.form_doc_entity_id = ''
         self.manage_entity_mode = ManageEntityDialogMode.NONE
+
 
     def set_user_id(self, user_id: str):
         self.user_id = user_id
@@ -29,9 +31,9 @@ class SessionInMemory(Session):
         return self.manage_entity_mode
 
     def set_form_doc_entity_id(self, entity_id: str):
-        pass
+        self.form_doc_entity_id = entity_id
 
     def get_form_doc_entity_id(self) -> str:
-        pass
+        return self.form_doc_entity_id
 
 

@@ -12,6 +12,7 @@ class FormDocDialogTk(FormDocDialog):
         self.root.protocol("WM_DELETE_WINDOW", self.funcs.closed_on_x)
 
     def show(self):
+        self.root.title(self.funcs.get_form_doc_entity_id())
         self.root.mainloop()
 
     def close(self):
