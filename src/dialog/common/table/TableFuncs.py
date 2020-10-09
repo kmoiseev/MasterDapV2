@@ -22,5 +22,9 @@ class TableFuncs:
         pass
 
     @abstractmethod
+    def duplicate_entity(self, key):
+        pass
+
+    @abstractmethod
     def get_table_data(self) -> Table:
         pass

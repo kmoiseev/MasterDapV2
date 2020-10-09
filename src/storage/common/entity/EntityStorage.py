@@ -32,3 +32,7 @@ class EntityStorage:
     @abstractmethod
     def remove_entity(self, key):
         pass
+
+    @abstractmethod
+    def duplicate(self, key):
+        pass

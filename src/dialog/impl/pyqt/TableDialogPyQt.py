@@ -85,9 +85,14 @@ class TableDialogPyQt(TableDialog, ABC):
             Qt.QIcon(DELETE),
             lambda: self.funcs.delete_entity(entity_key)
         )
+        duplicate_deal_button = create_qt_button(
+            Qt.QIcon(DUPLICATE),
+            lambda: self.funcs.duplicate_entity(entity_key)
+        )
         self.table_widget.setCellWidget(row_number, 0, create_deal_button)
         self.table_widget.setCellWidget(row_number, 1, edit_deal_button)
         self.table_widget.setCellWidget(row_number, 2, delete_deal_button)
+        self.table_widget.setCellWidget(row_number, 16, duplicate_deal_button)
 
     def enable(self):
         self.dialog_widget.setDisabled(False)

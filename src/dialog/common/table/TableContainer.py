@@ -54,6 +54,9 @@ class TableContainer(DialogContainer, TableFuncs):
         self.__entity_storage.remove_entity(key)
         self.dialog.draw_table()
 
+    def duplicate_entity(self, key):
+        self.__entity_storage.duplicate(key)
+
     def get_table_data(self) -> Table:
         return self.__table_factory.create(self.__entity_storage.get_all_entities())
 

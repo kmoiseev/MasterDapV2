@@ -64,6 +64,10 @@
     {
       "header": "№ ДТ",
       "value": "{number_dt}"
+    },
+    {
+      "header": "",
+      "value": ""
     }
   ]
 }
