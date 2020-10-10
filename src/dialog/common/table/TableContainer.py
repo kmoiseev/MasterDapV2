@@ -56,6 +56,7 @@ class TableContainer(DialogContainer, TableFuncs):
 
     def duplicate_entity(self, key):
         self.__entity_storage.duplicate(key)
+        self.dialog.draw_table()
 
     def get_table_data(self) -> Table:
         return self.__table_factory.create(self.__entity_storage.get_all_entities())
@@ -64,4 +65,3 @@ class TableContainer(DialogContainer, TableFuncs):
     def child_unfocused(self):
         super().child_unfocused()
         self.dialog.draw_table()
-
