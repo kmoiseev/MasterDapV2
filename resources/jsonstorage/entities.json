@@ -1,4 +1,24 @@
 {
+    "1000": {
+        "case_code_art": "16.2",
+        "case_code_part": "2",
+        "case_date_init": "15.09.2020",
+        "city": "г. Нижний Новгород",
+        "company_name": "ООО «Рога и копыта»",
+        "date_of_protokol": "",
+        "date_of_rassm": "",
+        "email": "zaytsev@mail.ru",
+        "index": "603053",
+        "inn": "52348767",
+        "kpp": "52014601",
+        "number_case": "1000",
+        "number_dt": "",
+        "ogrn": "5213652678",
+        "representative_name": "А.П. Зайцев",
+        "representative_position": "генеральный директор",
+        "state": "Нижегородская обл.",
+        "street": "Бусыгина пр., д. 36, кв. 111"
+    },
     "556": {
         "case_code_art": "16.2",
         "case_code_part": "2",
@@ -58,5 +78,25 @@
         "representative_position": "",
         "state": "",
         "street": ""
+    },
+    "999": {
+        "case_code_art": "16.2",
+        "case_code_part": "2",
+        "case_date_init": "15.09.2020",
+        "city": "г. Нижний Новгород",
+        "company_name": "ООО «Рога и копыта»",
+        "date_of_protokol": "",
+        "date_of_rassm": "",
+        "email": "zaytsev@mail.ru",
+        "index": "603053",
+        "inn": "52348767",
+        "kpp": "52014601",
+        "number_case": "999",
+        "number_dt": "",
+        "ogrn": "5213652678",
+        "representative_name": "А.П. Зайцев",
+        "representative_position": "генеральный директор",
+        "state": "Нижегородская обл.",
+        "street": "Бусыгина пр., д. 36, кв. 111"
     }
 }

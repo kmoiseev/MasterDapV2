@@ -48,8 +48,7 @@ class EntityStorageJson(EntityStorage):
 
     def duplicate(self, key):
         entities_json = JsonReader(self.__file_path).read()
-        # найти максильное значение ключей и к нему +1
-        new_key = str(int(key) + 1)
+        new_key = str(int(max(entities_json.keys())) + 1)
         new_entity = self.entity_factory.create(
             new_key,
             entities_json[key]
