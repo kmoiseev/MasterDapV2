@@ -46,7 +46,10 @@ class EntityStorageJson(EntityStorage):
         del entities_json[key]
         JsonWriter(self.__file_path, entities_json).write()
 
-    def duplicate(self, key: str):
-        new_entity_json = JsonReader(self.__file_path).read()
-        print(int(new_entity_json[key]['number_case']) + 1)
+    def duplicate(self, key):
+        entities_json = JsonReader(self.__file_path).read()
+        self.entity_factory.create(
+            str(int(key)+1),
+            entities_json[key])
+        JsonWriter(self.__file_path, entities_json).write()
         # todo
